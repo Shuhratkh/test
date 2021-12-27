@@ -1,0 +1,7 @@
+<h2>Delete a Survey</h2>
+<h5>Do you want to delete a Survey?</h5>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Delete</button>
+</form>

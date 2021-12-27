@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Surveys{% endblock %}
+
+{% block content %}
+<h4>List of Surveys</h4>
+{% for s in surveys %}
+<p>{{ s.title }}</p>
+<p>Created: {{s.date_created}}</p>
+<a href="{% url 'edit' s.pk %}">Edit </a><a href="{% url 'delete' s.pk %}">Delete</a>
+<hr>
+{% endfor %}
+<p><a href="{% url 'create' %}">Create a Survey</a> </p>
+<p><a href="{% url 'home' %}">Back</a> </p>
+{% endblock %}
